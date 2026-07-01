@@ -1,6 +1,8 @@
 package com.service;
 
+import java.util.Comparator;
 import java.util.List;
+import java.util.TreeSet;
 
 import com.mmcoe.projo.Book;
 import com.mmcoe.projo.BookDao;
@@ -50,5 +52,13 @@ public class BookServiceImpl implements BookService {
 		// TODO Auto-generated method stub
 		return dao.findByPrice(min, max);
 	}
-
+   public List<Book> listOrderByTitle(){
+	   
+	   Comparator<Book>nameTitle=(p1,p2)->p1.getTitle().compareTo(p2.getTitle());
+	  
+	   List<Book>list=dao.list();
+	   list.sort(nameTitle);
+	   return list;
+	   
+   }
 }
