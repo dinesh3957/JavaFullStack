@@ -4,6 +4,8 @@ import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+import com.jdbcfactory.JdbcFactory;
+
 public class ResultDemo {
 
 	public static void main(String[] args) {
