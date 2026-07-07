@@ -1,21 +1,23 @@
+import java.util.Scanner;
+
 import com.dao.BookDao;
-import com.dao.BookDaoCollectionImpl;
+import com.dao.BookDaoJdbcImpl;
 import com.pojo.Book;
 import com.service.BookNotFoundException;
 import com.service.BookService;
 import com.service.BookServiceImpl;
-import java.util.Scanner;
 
 public class TestBookService {
     public static void main(String[] args) {
-        BookDao dao = new BookDaoCollectionImpl();
+//        BookDao dao = new BookDaoCollectionImpl();
+        BookDao dao = new BookDaoJdbcImpl();
         BookService service = new BookServiceImpl(dao);
         Scanner scanner = new Scanner(System.in);
 
         // Pre-populating test data
-        service.save(new Book(101, "Wings Of Fire", "APJ Kalam", 700));
-        service.save(new Book(102, "Metamorphisis", "Frank Kafka", 230));
-        service.save(new Book(103, "Normal People", "Sally Rooney", 500));
+//        service.save(new Book(101, "Wings Of Fire", "APJ Kalam", 700));
+//        service.save(new Book(102, "Metamorphisis", "Frank Kafka", 230));
+//        service.save(new Book(103, "Normal People", "Sally Rooney", 500));
 
         while(true) {
             System.out.println("\n--- BOOK MANAGEMENT SYSTEM ---");
